@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/WebApplicationJAX-WS/CalculoBasicoService?wsdl" uri="src/conf/xml-resources/web-service-references/CalculoBasicoService/wsdl/localhost_8080/WebApplicationJAX-WS/CalculoBasicoService.wsdl"/>
+    <system systemId="http://localhost:8080/WebApplicationJAX-WS/CalculoBasicoService?xsd=1" uri="src/conf/xml-resources/web-service-references/CalculoBasicoService/wsdl/localhost_8080/WebApplicationJAX-WS/CalculoBasicoService.xsd_1.xsd"/>
+</catalog>
