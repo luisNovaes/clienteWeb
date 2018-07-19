@@ -1,6 +1,7 @@
 
 package ws;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -59,5 +60,80 @@ public interface CalculoBasico {
         int x,
         @WebParam(name = "y", targetNamespace = "")
         int y);
+
+    /**
+     * 
+     * @param x
+     * @param y
+     * @param z
+     * @return
+     *     returns java.util.List<ws.Resultado>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "somarVarios", targetNamespace = "http://ws.aplicacao.com/", className = "ws.SomarVarios")
+    @ResponseWrapper(localName = "somarVariosResponse", targetNamespace = "http://ws.aplicacao.com/", className = "ws.SomarVariosResponse")
+    @Action(input = "http://ws.aplicacao.com/CalculoBasico/somarVariosRequest", output = "http://ws.aplicacao.com/CalculoBasico/somarVariosResponse")
+    public List<Resultado> somarVarios(
+        @WebParam(name = "x", targetNamespace = "")
+        int x,
+        @WebParam(name = "y", targetNamespace = "")
+        int y,
+        @WebParam(name = "z", targetNamespace = "")
+        int z);
+
+    /**
+     * 
+     * @param obj
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "somarObjetos", targetNamespace = "http://ws.aplicacao.com/", className = "ws.SomarObjetos")
+    @ResponseWrapper(localName = "somarObjetosResponse", targetNamespace = "http://ws.aplicacao.com/", className = "ws.SomarObjetosResponse")
+    @Action(input = "http://ws.aplicacao.com/CalculoBasico/somarObjetosRequest", output = "http://ws.aplicacao.com/CalculoBasico/somarObjetosResponse")
+    public int somarObjetos(
+        @WebParam(name = "obj", targetNamespace = "")
+        List<Resultado> obj);
+
+    /**
+     * 
+     * @param x
+     * @param y
+     * @param z
+     * @return
+     *     returns java.util.List<ws.Resultado>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "somarVariosEx", targetNamespace = "http://ws.aplicacao.com/", className = "ws.SomarVariosEx")
+    @ResponseWrapper(localName = "somarVariosExResponse", targetNamespace = "http://ws.aplicacao.com/", className = "ws.SomarVariosExResponse")
+    @Action(input = "http://ws.aplicacao.com/CalculoBasico/somarVariosExRequest", output = "http://ws.aplicacao.com/CalculoBasico/somarVariosExResponse")
+    public List<Resultado> somarVariosEx(
+        @WebParam(name = "x", targetNamespace = "")
+        int x,
+        @WebParam(name = "y", targetNamespace = "")
+        int y,
+        @WebParam(name = "z", targetNamespace = "")
+        int z);
+
+    /**
+     * 
+     * @param obj
+     * @param x
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "somarObjeto", targetNamespace = "http://ws.aplicacao.com/", className = "ws.SomarObjeto")
+    @ResponseWrapper(localName = "somarObjetoResponse", targetNamespace = "http://ws.aplicacao.com/", className = "ws.SomarObjetoResponse")
+    @Action(input = "http://ws.aplicacao.com/CalculoBasico/somarObjetoRequest", output = "http://ws.aplicacao.com/CalculoBasico/somarObjetoResponse")
+    public int somarObjeto(
+        @WebParam(name = "obj", targetNamespace = "")
+        Resultado obj,
+        @WebParam(name = "x", targetNamespace = "")
+        int x);
 
 }

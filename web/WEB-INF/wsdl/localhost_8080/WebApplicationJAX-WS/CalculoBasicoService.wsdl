@@ -16,6 +16,30 @@
 <message name="somarExResponse">
 <part name="parameters" element="tns:somarExResponse"/>
 </message>
+<message name="somarVarios">
+<part name="parameters" element="tns:somarVarios"/>
+</message>
+<message name="somarVariosResponse">
+<part name="parameters" element="tns:somarVariosResponse"/>
+</message>
+<message name="somarObjetos">
+<part name="parameters" element="tns:somarObjetos"/>
+</message>
+<message name="somarObjetosResponse">
+<part name="parameters" element="tns:somarObjetosResponse"/>
+</message>
+<message name="somarVariosEx">
+<part name="parameters" element="tns:somarVariosEx"/>
+</message>
+<message name="somarVariosExResponse">
+<part name="parameters" element="tns:somarVariosExResponse"/>
+</message>
+<message name="somarObjeto">
+<part name="parameters" element="tns:somarObjeto"/>
+</message>
+<message name="somarObjetoResponse">
+<part name="parameters" element="tns:somarObjetoResponse"/>
+</message>
 <portType name="CalculoBasico">
 <operation name="somar">
 <input wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarRequest" message="tns:somar"/>
@@ -24,6 +48,22 @@
 <operation name="somarEx">
 <input wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarExRequest" message="tns:somarEx"/>
 <output wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarExResponse" message="tns:somarExResponse"/>
+</operation>
+<operation name="somarVarios">
+<input wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarVariosRequest" message="tns:somarVarios"/>
+<output wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarVariosResponse" message="tns:somarVariosResponse"/>
+</operation>
+<operation name="somarObjetos">
+<input wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarObjetosRequest" message="tns:somarObjetos"/>
+<output wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarObjetosResponse" message="tns:somarObjetosResponse"/>
+</operation>
+<operation name="somarVariosEx">
+<input wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarVariosExRequest" message="tns:somarVariosEx"/>
+<output wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarVariosExResponse" message="tns:somarVariosExResponse"/>
+</operation>
+<operation name="somarObjeto">
+<input wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarObjetoRequest" message="tns:somarObjeto"/>
+<output wsam:Action="http://ws.aplicacao.com/CalculoBasico/somarObjetoResponse" message="tns:somarObjetoResponse"/>
 </operation>
 </portType>
 <binding name="CalculoBasicoPortBinding" type="tns:CalculoBasico">
@@ -38,6 +78,42 @@
 </output>
 </operation>
 <operation name="somarEx">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="somarVarios">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="somarObjetos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="somarVariosEx">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="somarObjeto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

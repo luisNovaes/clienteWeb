@@ -6,7 +6,57 @@
 
 <xs:element name="somarExResponse" type="tns:somarExResponse"/>
 
+<xs:element name="somarObjeto" type="tns:somarObjeto"/>
+
+<xs:element name="somarObjetoResponse" type="tns:somarObjetoResponse"/>
+
+<xs:element name="somarObjetos" type="tns:somarObjetos"/>
+
+<xs:element name="somarObjetosResponse" type="tns:somarObjetosResponse"/>
+
 <xs:element name="somarResponse" type="tns:somarResponse"/>
+
+<xs:element name="somarVarios" type="tns:somarVarios"/>
+
+<xs:element name="somarVariosEx" type="tns:somarVariosEx"/>
+
+<xs:element name="somarVariosExResponse" type="tns:somarVariosExResponse"/>
+
+<xs:element name="somarVariosResponse" type="tns:somarVariosResponse"/>
+
+<xs:complexType name="somarVariosEx">
+<xs:sequence>
+<xs:element name="x" type="xs:int"/>
+<xs:element name="y" type="xs:int"/>
+<xs:element name="z" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="somarVariosExResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:resultado" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resultado">
+<xs:sequence>
+<xs:element name="texto" type="xs:string" minOccurs="0"/>
+<xs:element name="valor" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="somarObjeto">
+<xs:sequence>
+<xs:element name="obj" type="tns:resultado" minOccurs="0"/>
+<xs:element name="x" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="somarObjetoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="somar">
 <xs:sequence>
@@ -16,6 +66,32 @@
 </xs:complexType>
 
 <xs:complexType name="somarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="somarVarios">
+<xs:sequence>
+<xs:element name="x" type="xs:int"/>
+<xs:element name="y" type="xs:int"/>
+<xs:element name="z" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="somarVariosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:resultado" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="somarObjetos">
+<xs:sequence>
+<xs:element name="obj" type="tns:resultado" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="somarObjetosResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:int"/>
 </xs:sequence>
@@ -31,13 +107,6 @@
 <xs:complexType name="somarExResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:resultado" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="resultado">
-<xs:sequence>
-<xs:element name="texto" type="xs:string" minOccurs="0"/>
-<xs:element name="valor" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>
